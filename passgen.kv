@@ -1,0 +1,87 @@
+<PassGenBoxLayout>:
+	padding: 20
+	orientation: 'vertical'
+	Label:
+		text: 'Password: '
+		font_size: 20
+		id: display
+	BoxLayout:
+		orientation: 'horizontal'
+		Label:
+			text: 'Lower Case'
+			font_size: 14
+		CheckBox:
+			height: '48dp'
+			id: lower_box
+			active: True
+		Label:
+			text: 'Upper Case'
+			font_size:14
+		CheckBox:
+			height: '48dp'
+			id: upper_box
+			active: True
+
+	BoxLayout:
+		orientation: 'horizontal'
+		Label:
+			text: 'Numbers'
+			font_size: 14
+		CheckBox:
+			height: '48dp'
+			id: number_box
+			active: True
+		Label:
+			text: 'Special Characters'
+			font_size: 14
+		CheckBox:
+			height: '48dp'
+			id: special_box
+
+	BoxLayout:
+		orientation: 'horizontal'
+		Label:
+			text: 'Lower Length Boundary'
+			font_size: 14
+		Label:
+			text: '10'
+			font_size: 12
+			id: lower_display
+	Slider:
+		id: lower_slider
+		width: '48dp'
+		orientation: 'horizontal'
+		step: 1
+		value: 10
+		min: 1
+		max: 30
+		on_value_pos: root.edit_lower_bound(self)
+		
+
+	BoxLayout:
+		orientation: 'horizontal'
+		Label:
+			text: 'Upper Length Boundary'
+			font_size: 14
+		Label:
+			text: '16'
+			font_size: 12
+			id: upper_display
+	Slider:
+		id: upper_slider
+		width: '48dp'
+		orientation: 'horizontal'
+		step: 1
+		value: 16
+		min: 1
+		max: 30
+		on_value_pos: root.edit_upper_bound(self)
+
+	Button:
+		text: 'Generate Password'
+		on_release: root.generate_new_password()
+		font_size: 14
+
+
+
+	
